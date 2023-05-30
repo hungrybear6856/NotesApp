@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mynote/widget/CustomAppBar.dart';
-import 'package:mynote/widget/custom_note.dart';
-import 'package:mynote/widget/notes_ListView.dart';
+import 'package:mynote/widget/Custom_Text_Field.dart';
 
-class NotesViewBody extends StatelessWidget {
-  const NotesViewBody();
+class editNoteViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 5),
       child: Column(
@@ -16,10 +15,17 @@ class NotesViewBody extends StatelessWidget {
             height: 15,
           ),
           CustomAppBar(
-            iconData: Icons.search,
-            tiltle: 'Note',
+            iconData: Icons.check,
+            tiltle: 'edit  Note',
           ),
-          Expanded(child: NotesListView())
+          SizedBox(
+            height: 15,
+          ),
+          CustomTextField(maxline: 1, hint: 'title'),
+          SizedBox(
+            height: 15,
+          ),
+          CustomTextField(maxline: 5, hint: 'contiant'),
         ],
       ),
     );
